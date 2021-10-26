@@ -43,6 +43,7 @@ public class DataSourceProxyConfig  {
         System.out.println("master test");
         System.out.println("hot-fix test");
         System.out.println("push test");
+        System.out.println("pull test");
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSourceProxy);
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
