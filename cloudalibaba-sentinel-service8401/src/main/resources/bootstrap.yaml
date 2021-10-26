@@ -1,0 +1,15 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: cloud-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: http://localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+  profiles:
+    active: dev

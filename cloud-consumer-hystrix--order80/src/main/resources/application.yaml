@@ -1,0 +1,19 @@
+server:
+  port: 80
+spring:
+  application:
+    name: CLOUD-CONSUMER-HYSTRIX-ORDER
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server01.com:7001/eureka
+feign:
+  client:
+    config:
+      default:
+       ConnectTimeOut: 4500
+       ReadTimeOut: 4500
+  hystrix:
+    enabled: true

@@ -1,0 +1,16 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: cloud-config-client
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        file-extension: yaml
+        server-addr: http://localhost:8848
+        group: DEFAULT_GROUP
+        namespace: dead761d-463f-4835-94df-a28674c7043a

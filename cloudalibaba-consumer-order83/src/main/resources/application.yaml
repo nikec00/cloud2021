@@ -1,0 +1,14 @@
+server:
+  port: 83
+spring:
+  application:
+    name: CLOUD-CONSUMER-ORDER
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+service-url:
+  nacos-user-service: http://NACOS-CLIENT-PAYMENT
+logging:
+  level:
+    com.cloud.client.PaymentClient: debug

@@ -1,0 +1,11 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: CLOUD-HYSTRIX-PAYMENT
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server01.com:7001/eureka

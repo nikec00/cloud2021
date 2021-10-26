@@ -1,0 +1,20 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: PROVIDER-PAYMENT
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/cloud2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+mybatis:
+  type-aliases-package: com.cloud.entity
+  mapper-locations: classpath:/mapper/*Mapper.xml

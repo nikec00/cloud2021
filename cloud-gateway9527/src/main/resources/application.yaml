@@ -1,0 +1,26 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: payment_routh
+          uri: lb://CLOUD-HYSTRIX-PAYMENT
+          predicates:
+            - Path=/payment/hystrix/**
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server01.com:7001/eureka
+  instance:
+    hostname: ${spring.application.name}
+management:
+  endpoints:
+    web:
+      exposure:
+        #开启所有web端点暴露
+        include: "*"

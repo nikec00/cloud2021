@@ -1,0 +1,22 @@
+server:
+  port: 84
+spring:
+  application:
+    name: cloud-nacos-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:1000
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: cloud-nacos-order
+            group-type: json
+            rule-type: flow
+server-url:
+  nacos-user-service: http://CLOUD-ALIBABA-PAYMENT

@@ -1,0 +1,32 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: SERVER-CLIENT
+  cloud:
+    config:
+      #获取那个配置文件 1.确认分支 2.确认文件名 3.确定环境
+      label: master
+      name: config
+      profile: prod
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server01.com:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

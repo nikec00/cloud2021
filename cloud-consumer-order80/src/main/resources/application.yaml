@@ -1,0 +1,12 @@
+server:
+  port: 80
+spring:
+  application:
+    name: consumer-order
+eureka:
+  client:
+#    把自己注册进eureka注册中心中
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server02.com:7002/eureka,http://eureka-server01.com:7001/eureka
